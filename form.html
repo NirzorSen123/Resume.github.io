@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Application</title>
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <!--first col-->
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" 
+                    id="nameField" 
+                    placeholder="Enter here" 
+                    class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="contactField">Your Contact</label>
+                    <input type="text" 
+                    id="contactField" 
+                    placeholder="Enter here" 
+                    class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="emailField">Email Id</label>
+                    <input type="text" 
+                    id="emailField" 
+                    placeholder="Enter here" 
+                    class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="dobField">Date Of Birth</label>
+                    <input type="date" 
+                    id="dobField"  
+                    class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="addressField">Your Address</label>
+                    <textarea 
+                    id="addressField" 
+                    placeholder="Enter here" 
+                    class="form-control"
+                    rows="4">
+                    </textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="">Select Your Photo</label>
+                    <input id="imgField" type="file" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="languageField">Select Your Preferable language</label>
+                    
+                    <Select id="languageField">
+                        <option value="english">English</option>
+                        <option value="bengali">Bengali</option>
+                        <option value="hindi">Hindi</option>
+                    </Select>
+
+                </div>
+
+
+                <p class="text-secondary my-3">Important Link</p>
+                
+                <div class="form-group mt-2">
+                    <label for="linkedField">LinkedIn</label>
+                    <input type="text" 
+                    id="linkedField" 
+                    placeholder="Enter here" 
+                    class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!--second col-->
+                <h3>Professional Information</h3>
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea 
+                    id="objectiveField"
+                    rows="3"
+                    placeholder="Enter here" 
+                    class="form-control">
+                    </textarea>
+                </div>
+
+                <div class="form-group mt-2" id="aq">
+                    <label for="">Academic Qualification</label>
+                    <textarea 
+                    placeholder="Enter here" 
+                    class="form-control eqField"
+                    rows="3">
+                    </textarea>
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="addNewAQfield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="we">
+                    <label for="">Internship/Work Experience</label>
+                    <textarea 
+                    rows="3"
+                    placeholder="Enter here" 
+                    class="form-control weField">
+                    </textarea>
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css"/>
+            <div class="container text-center mt-3">
+                <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+               <!--first col-->
+               <img 
+                 src="https://isobarscience.com/wp-content/uploads/2020/09/default-profile-picture1.jpg" 
+                 alt=""
+                 class="img-fluid myimg"
+                 id="imgTemplate"
+               />
+               <div class="container">
+                   <p id="nameT1">Nirzor Sen</p>
+                   <p id="contactT">+917596977515,+917089213412</p>
+                   <p>
+                    <a id="mailT" href="#1">nirzor255sen@gmail.com</a>
+                </p>
+                <p id="dobT">Date of Birth:24/09/1999</p>
+                <p id="languageT">English</p>
+                
+
+                   <p id="addressT">563663/4524152 Sector 35 Noida, India</p>
+                   <hr/>
+                   
+                <p>
+                    <a id="linkedT" href="#1">https://www.linkedin.com/Nirzor sen</a>
+                </p>
+               </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!--second col-->
+                <h1 id="nameT2" class="text-center" style="font-weight: 980">
+                   Nirzor Sen
+                </h1>
+                <!--objective card-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, minus ipsam perspiciatis vel dolores consequuntur dolorum deleniti consequatur impedit similique blanditiis, rerum, neque perferendis voluptatem est eius accusamus sunt asperiores consectetur illo dolor aliquid! Quia consectetur numquam temporibus distinctio. Expedita at hic veritatis laboriosam, qui facilis cum nam quibusdam voluptatem.</p>
+                    </div>
+                </div>
+                 <!--Academic Qualification-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                         <ul id="aqT">
+                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, iure.</li>
+                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, iure.</li>
+                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, iure.</li>
+                         </ul>
+                    </div>
+                </div>
+                
+                <!--work experience-->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                         <ul id="weT">
+                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, iure.</li>
+                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, iure.</li>
+                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, iure.</li>
+                         </ul>
+                    </div>
+                </div>
+
+                
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">
+                        Print CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
