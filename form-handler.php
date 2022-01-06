@@ -23,5 +23,4 @@ mail($to,$email_subject,$email_body,$headers);
 
 header("location: contact.html");
 
-
 ?>
