@@ -106,6 +106,7 @@ function printCV(){
 }
 
 Object.values(document.getElementsByTagName('textarea')).forEach(ta => ta.value = '')
+
 function sendMail() {
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
