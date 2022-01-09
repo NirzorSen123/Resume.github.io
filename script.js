@@ -106,3 +106,15 @@ function printCV(){
 }
 
 Object.values(document.getElementsByTagName('textarea')).forEach(ta => ta.value = '')
+function sendMail() {
+    const name = document.getElementById('name').value
+    const email = document.getElementById('email').value
+    const message = document.getElementById('message').value
+
+    fetch("http://localhost:3000/send-mail", {method: "POST", headers: {
+        "Content-Type": "application/json"
+    }, body: JSON.stringify({
+        name, email, message
+    })}).then(()=>console.log("Sent"))
+
+}
